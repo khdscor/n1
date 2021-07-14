@@ -2,6 +2,7 @@ package n1.n1.article.domain;
 
 import java.sql.Timestamp;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,14 +38,8 @@ public class Article {
     @Column(nullable = false)
     private String content;
 
-    @Column(nullable = false)
-    private int year;
-
-    @Column(nullable = false)
-    private int month;
-
-    @Column(nullable = false)
-    private int day;
+    @Embedded
+    private Date date;
 
     @CreationTimestamp
     private Timestamp createdDate;
